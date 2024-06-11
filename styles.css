@@ -1,0 +1,218 @@
+/* Global styles */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #6fbcef, #ffc3a0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+    overflow: hidden;
+}
+
+/* Container styles */
+.container {
+    background: linear-gradient(to right, #6fbcef, #b179ed);
+    border-radius: 15px;
+    padding: 25px 35px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.container:hover {
+    transform: scale(1.02);
+    background: rgba(128, 167, 222, 0.95);
+    
+}
+
+/* Heading styles */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff6f61;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+input {
+    padding: 10px 15px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border-color: #ff6f61;
+    box-shadow: 0 0 10px rgba(255, 111, 97, 0.5);
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #e05a50;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Suggestions styles */
+.suggestions {
+    background-color: #fff;
+    border-radius: 8px;
+    margin-top: 5px;
+    width: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    position: absolute;
+    z-index: 1000;
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.suggestion-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* Weather container styles */
+.weather-container {
+    display: none;
+    margin-top: 20px;
+    animation: slideIn 1s ease-in-out;
+}
+
+.weather-container.visible {
+    display: block;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.weather-container h2 {
+    font-size: 2rem;
+    margin: 10px 0;
+    color: #007BFF;
+    transition: color 0.3s;
+}
+
+.weather-container h2:hover {
+    color: #b57ff7;
+}
+
+.weather-details {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    color: #333;
+}
+
+.temperature {
+    font-size: 3rem;
+    color: #ff6f61;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.temperature:hover {
+    color: #e05a50;
+    transform: scale(1.1);
+}
+
+.extra-details {
+    text-align: left;
+}
+
+.extra-details p {
+    margin: 5px 0;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.extra-details p:hover {
+    color: #ff6f61;
+}
+
+/* Error message styles */
+.error-message {
+    color: #ff4f4f;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
